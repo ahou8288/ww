@@ -7,9 +7,22 @@ import {
 
 import Guide from './Guide'
 
-const Topics = ({ match }) => (
+const GuideIndex = ({ match }) => (
   <div>
     <h2>Guides</h2>
+
+    <Route path={`${match.path}/:topicId`} component={Guide}/>
+    <Route exact path={match.path} render={() => (
+      <div>
+        <h3>Select a section.</h3>
+        <LinkList match = { match }/>
+      </div>
+    )}/>
+  </div>
+)
+
+const LinkList = ({ match }) => (
+  <div>
     <ul>
       <li>
         <Link to={`${match.url}/copeton-dam-to-horse-stealers-creek`}>
@@ -27,12 +40,7 @@ const Topics = ({ match }) => (
         </Link>
       </li>
     </ul>
-
-    <Route path={`${match.path}/:topicId`} component={Guide}/>
-    <Route exact path={match.path} render={() => (
-      <h3>Select a section.</h3>
-    )}/>
   </div>
 )
 
-export default Topics;
+export default GuideIndex;
