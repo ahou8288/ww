@@ -28,16 +28,16 @@ const BasicExample = () => (
           </Link>
         </li>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/guides">Guides</Link></li>
         <li><Link to="/levels">Levels</Link></li>
+        <li><Link to="/guides">Guides</Link></li>
         <li><Link to="/map">Map</Link></li>
       </ul>
 
       <hr/>
 
       <Route exact path="/" component={Home}/>
-      <Route path="/guides" component={GuideIndex}/>
       <Route path="/levels" component={LevelIndex}/>
+      <Route path="/guides" component={GuideIndex}/>
       <Route path="/map" component={OverviewMap}/>
     </div>
   </Router>
