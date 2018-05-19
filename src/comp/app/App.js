@@ -4,20 +4,15 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import logo from './img/logo.svg';
+import logo from '../../img/logo.svg';
 import './App.css'
+
+// My components
+import LevelIndex from '../levels/LevelIndex'
 
 const Home = () => (
   <div>
     <h2>Home</h2>
-    <img src={require('./img/hero-min2.jpg')} />
-  </div>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-    Website by andrew.
   </div>
 )
 
@@ -58,20 +53,22 @@ const Topics = ({ match }) => (
 const BasicExample = () => (
   <Router>
     <div>
-      <Link to="/">
-        <img src={logo} className="App-logo" alt="logo" />
-      </Link>
-      <ul>
+      <ul id="header">
+        <li>
+          <Link to="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Link>
+        </li>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
         <li><Link to="/topics">Guides</Link></li>
+        <li><Link to="/levels">Levels</Link></li>
       </ul>
 
       <hr/>
 
       <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
       <Route path="/topics" component={Topics}/>
+      <Route path="/levels" component={LevelIndex}/>
     </div>
   </Router>
 )
