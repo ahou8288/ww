@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css';
-import { Sidebar, Segment, Button, Menu } from 'semantic-ui-react'
+import { Sidebar, Segment, Button, Menu, Icon, Item } from 'semantic-ui-react'
 
 // My components
 import App from '../app/App'
+import Sidelinks from '../sidelinks/Sidelinks'
 
 class Nav extends Component {
   state = { visible: false }
@@ -14,10 +15,14 @@ class Nav extends Component {
     const { visible } = this.state
     return (
       <div class="nav">
-        <Button onClick={this.toggleVisibility}>Toggle Visibility</Button>
+        <Menu>
+          <Menu.Item>
+          <Icon name='sidebar' onClick={this.toggleVisibility}/>
+          </Menu.Item>
+        </Menu>
         <Sidebar.Pushable as={Segment}>
           <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
-            Content
+            <Sidelinks/>
           </Sidebar>
           <Sidebar.Pusher>
             <Segment basic>
