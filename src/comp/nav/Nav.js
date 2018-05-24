@@ -1,37 +1,32 @@
 import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css';
+import './nav.css';
 import { Sidebar, Segment, Button, Menu, Icon, Item } from 'semantic-ui-react'
 
 // My components
 import App from '../app/App'
 import Sidelinks from '../sidelinks/Sidelinks'
 
-class Nav extends Component {
-  state = { visible: false }
+const Nav = () => (
+  <div class="nav">
+    <App/>
+    <Menu attached='bottom' tabular>
+      <Menu.Item>
+      <Icon name='camera' />
+        Levels
+      </Menu.Item>
 
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+      <Menu.Item>
+      <Icon name='camera' />
+        Guides
+      </Menu.Item>
 
-  render() {
-    const { visible } = this.state
-    return (
-      <div class="nav">
-        <Menu>
-          <Menu.Item>
-          <Icon name='sidebar' onClick={this.toggleVisibility}/>
-          </Menu.Item>
-        </Menu>
-        <Sidebar.Pushable as={Segment}>
-          <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
-            <Sidelinks/>
-          </Sidebar>
-          <Sidebar.Pusher>
-            <Segment basic>
-              <App />
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </div>
-    )
-  }
-}
+      <Menu.Item>
+      <Icon name='camera' />
+        Map
+      </Menu.Item>
+    </Menu>
+  </div>
+)
+
 export default Nav
