@@ -1,6 +1,7 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
+import { Route, Link } from 'react-router-dom'
 
 
 const levels = [
@@ -25,6 +26,25 @@ const tableRows = levels.map((d) =>
   </LinkContainer>
 );
 
+const Level = ({ match }) => (
+  <div>
+    <Link to="/levels"><h4>Levels Index</h4></Link>
+    <p>{levels[match.params.gaugenum-1].name} River</p>
+    <p>
+      Reading: {levels[match.params.gaugenum-1].level}m at {levels[match.params.gaugenum-1].date}
+    </p>
+  </div>
+  )
+
+const LevelRoutes = ({ match }) => (
+  <div>
+    <Route path={`${match.path}/:gaugenum`} component={Level}/>
+    <Route exact path={match.path} render={() => (
+      <LevelIndex/>
+    )}/>
+  </div>
+  )
+
 class LevelIndex extends React.Component{
   render() {
     return (
@@ -45,4 +65,4 @@ class LevelIndex extends React.Component{
   }
 }
 
-export default LevelIndex;
+export default LevelRoutes;
