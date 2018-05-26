@@ -1,29 +1,45 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import {Table} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 
-const levels = [{name:"Bielsdown",link:1,},{name:"Gwydir",link:2,},{name:"Barrington",link:3,},{name:"Glouceter",link:4,}]
-const levelItems = levels.map((d) =>
-  <li>
-    <Link to={"/levels/"+d.link}>{d.name}</Link>
-  </li>
+
+const levels = [
+  {name:"Bielsdown",link:1,date:"2:00pm",level:"0.76",},
+  {name:"Gwydir",link:2,date:"5:30pm",level:"1.67",},
+  {name:"Barrington",link:3,date:"1:00pm",level:"0.59",},
+  {name:"Glouceter",link:4,date:"5:20pm",level:"2.30",}
+  ];
+
+const headings = ["Name","Level (m)","Date"];
+
+const tableHeadings = headings.map((d) =>
+  <th>{d}</th>
+);
+const tableRows = levels.map((d) =>
+  <LinkContainer to={"/levels/"+d.link}>
+    <tr>
+      <td>{d.name}</td>
+      <td>{d.level}</td>
+      <td>{d.date}</td>
+    </tr>
+  </LinkContainer>
 );
 
 class LevelIndex extends React.Component{
   render() {
     return (
       <div>
-        <form>
-          Grade filter:<br/>
-          <input type="checkbox" name="grade" value="1"/>1<br/>
-          <input type="checkbox" name="grade" value="2"/>2<br/>
-          <input type="checkbox" name="grade" value="3"/>3
-        </form>
-
-        <br/>
-        Gauge List;
-        <ul>
-          {levelItems}
-        </ul>
+        <h1>River Levels</h1>
+        <Table responsive>
+          <thead>
+            <tr>
+              {tableHeadings}
+            </tr>
+          </thead>
+          <tbody>
+            {tableRows}
+          </tbody>
+        </Table>
       </div>
     )
   }
