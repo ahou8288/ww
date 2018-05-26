@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+#header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#header > li {
+    display: inline;
+    margin-left: 1em;
+    margin-right: 1em;
+}
