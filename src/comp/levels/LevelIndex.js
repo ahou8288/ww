@@ -1,7 +1,8 @@
 import React from 'react';
-import { Table, PageHeader } from 'react-bootstrap';
+import { Table, PageHeader, FormGroup, FormControl } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom';
+import './LevelIndex.css';
 
 const levels = [
   {name:"Bielsdown",link:1,date:"2:00pm",level:"0.76",},
@@ -16,13 +17,13 @@ const tableHeadings = headings.map((d) =>
   <th>{d}</th>
 );
 const tableRows = levels.map((d) =>
-  <LinkContainer to={"/levels/"+d.link}>
     <tr>
-      <td>{d.name}</td>
+      <LinkContainer to={"/levels/"+d.link}>
+        <td className="levellink">{d.name}</td>
+      </LinkContainer>
       <td>{d.level}</td>
       <td>{d.date}</td>
     </tr>
-  </LinkContainer>
 );
 
 const Level = ({ match }) => (
@@ -51,6 +52,9 @@ class LevelIndex extends React.Component{
         <PageHeader>
           River Levels
         </PageHeader>
+        <FormGroup>
+          <FormControl type="text" placeholder="Search" />
+        </FormGroup>{' '}
         <Table responsive>
           <thead>
             <tr>
