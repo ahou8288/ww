@@ -1,0 +1,6 @@
+.levellink {
+    color:#337ab7;
+}
+.levellink:hover {
+    text-decoration: underline;
+}

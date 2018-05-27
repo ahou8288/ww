@@ -9,10 +9,7 @@ const Footer = () => (
       <Navbar.Brand>
         <img src={headerLogo} className="App-logo" alt="logo" />
       </Navbar.Brand>
-      <Navbar.Toggle />
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Nav>
+      <Nav bsStyle="pills" center>
         <LinkContainer to="/levels">
           <NavItem>
             Levels
@@ -29,7 +26,7 @@ const Footer = () => (
         </NavItem>
         </LinkContainer>
       </Nav>
-    </Navbar.Collapse>
+    </Navbar.Header>
   </Navbar>
 )
 
