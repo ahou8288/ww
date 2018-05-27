@@ -1,8 +1,7 @@
 import React from 'react';
-import {Table} from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap';
+import { Table, PageHeader } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Route, Link } from 'react-router-dom'
-
 
 const levels = [
   {name:"Bielsdown",link:1,date:"2:00pm",level:"0.76",},
@@ -49,7 +48,9 @@ class LevelIndex extends React.Component{
   render() {
     return (
       <div>
-        <h1>River Levels</h1>
+        <PageHeader>
+          River Levels
+        </PageHeader>
         <Table responsive>
           <thead>
             <tr>

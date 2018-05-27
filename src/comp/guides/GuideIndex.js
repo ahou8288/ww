@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom'
-
+import { PageHeader } from 'react-bootstrap'
 import Guide from './Guide'
 
 const GuideIndex = ({ match }) => (
   <div>
-    <h2>Guides</h2>
-
+    <PageHeader>
+      Guides
+    </PageHeader>
     <Route path={`${match.path}/:topicId`} component={Guide}/>
     <Route exact path={match.path} render={() => (
       <div>
