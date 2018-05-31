@@ -8,7 +8,7 @@ import OverviewMap from '../map/OverviewMap'
 import Footer from './Footer'
 
 const BasicExample = () => (
-  <BrowserRouter>
+  <BrowserRouter id="root">
     <div>
       <Route exact path="/" component={LevelIndex}/>
       <Route path="/levels" component={LevelIndex}/>

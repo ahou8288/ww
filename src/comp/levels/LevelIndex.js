@@ -1,8 +1,9 @@
 import React from 'react';
 import { Table, PageHeader, FormGroup, FormControl } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './LevelIndex.css';
+import Level from './Level.js'
 
 const levels = [
   {name:"Bielsdown",link:1,date:"2:00pm",level:"0.76",},
@@ -26,15 +27,6 @@ const tableRows = levels.map((d) =>
     </tr>
 );
 
-const Level = ({ match }) => (
-  <div>
-    <Link to="/levels"><h4>Levels Index</h4></Link>
-    <p>{levels[match.params.gaugenum-1].name} River</p>
-    <p>
-      Reading: {levels[match.params.gaugenum-1].level}m at {levels[match.params.gaugenum-1].date}
-    </p>
-  </div>
-  )
 
 const LevelRoutes = ({ match }) => (
   <div>
