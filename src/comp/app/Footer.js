@@ -7,7 +7,9 @@ const Footer = () => (
   <Navbar inverse collapseOnSelect fixedBottom fluid id="navfooter">
     <Navbar.Header>
       <Navbar.Brand>
-        <img src={headerLogo} className="App-logo" alt="logo" />
+        <LinkContainer to="/">
+          <img src={headerLogo} className="App-logo" alt="logo" />
+        </LinkContainer>
       </Navbar.Brand>
       <Nav bsStyle="pills" center>
         <LinkContainer to="/levels">

@@ -5,12 +5,13 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import LevelIndex from '../levels/LevelIndex'
 import GuideIndex from '../guides/GuideIndex'
 import OverviewMap from '../map/OverviewMap'
+import Home from '../home/Home'
 import Footer from './Footer'
 
 const BasicExample = () => (
   <BrowserRouter id="root">
     <div>
-      <Route exact path="/" component={LevelIndex}/>
+      <Route exact path="/" component={Home}/>
       <Route path="/levels" component={LevelIndex}/>
       <Route path="/guides" component={GuideIndex}/>
       <Route path="/map" component={OverviewMap}/>
