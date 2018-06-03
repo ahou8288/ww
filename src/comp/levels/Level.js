@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
 const levels = [
@@ -71,16 +71,15 @@ const Level = ({ match }) => (
   <div>
     <Link to="/levels"><h4>Levels Index</h4></Link>
     <p>{levels[match.params.gaugenum-1].name} River</p>
-    <p>
-      <LineChart width={400} height={400} data={data}>
-        <YAxis/>
+    <ResponsiveContainer aspect={1} width="100%">
+      <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3"/>
         <Tooltip/>
-        <Legend />
+        <YAxis/>
         <XAxis dataKey="name"/>
-        <Line type="monotone" dataKey="level" stroke="#8884d8" />
+        <Line type="linear" dataKey="level" stroke="#8884d8" />
       </LineChart>
-    </p>
+    </ResponsiveContainer>
     <p>
       Reading: {levels[match.params.gaugenum-1].level}m at {levels[match.params.gaugenum-1].date}
     </p>
