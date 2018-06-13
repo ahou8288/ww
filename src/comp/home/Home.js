@@ -1,5 +1,6 @@
 import React from 'react'
-import { Col, Panel } from 'react-bootstrap'
+import { Col, Panel, Button } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
 import './home.css'
 
 const Home = () => (
@@ -10,20 +11,26 @@ const Home = () => (
       <small>Get info about rivers</small>
     </h1>
     <hr/>
-    <Col xs={8} xsOffset={2}>
-      <Panel>
-        <Panel.Heading>LEVELS</Panel.Heading>
-        <Panel.Body>live river heights</Panel.Body>
-      </Panel>
-      <Panel>
-        <Panel.Heading>GUIDES</Panel.Heading>
-        <Panel.Body>section descriptions</Panel.Body>
-      </Panel>
-      <Panel>
-        <Panel.Heading>MAP</Panel.Heading>
-        <Panel.Body>map of guides & levels</Panel.Body>
-      </Panel>
-    </Col>
+    <div>
+      <LinkContainer to="/levels">
+        <Button bsStyle="primary" bsSize="large" block>
+          LEVELS
+          <p>live river heights</p>
+        </Button>
+      </LinkContainer>
+      <LinkContainer to="/guides">
+        <Button bsStyle="primary" bsSize="large" block>
+          GUIDES
+          <p>section descriptions</p>
+        </Button>
+      </LinkContainer>
+      <LinkContainer to="/map">
+        <Button bsStyle="primary" bsSize="large" block>
+          MAP
+          <p>map of guides & levels</p>
+        </Button>
+      </LinkContainer>
+    </div>
   </div>
 )
 export default Home
