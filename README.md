@@ -1,12 +1,12 @@
 ### Introduction
 
-This website
+This repo holds the code for the whitewater.stream website which I am developing.
 
 ### Technology stack
 
 * Reactjs front end served from S3
-* Backend in SOME LANGUAGE served from AWS Lambda. TODO
-* AWS dynamoDb used for data storage. TODO
+* Serverless Backend in Python served from AWS Lambda.
+* AWS dynamoDb used for data storage.
 * AWS Cognito used for user authentication. TODO
 
 ### Running the code
