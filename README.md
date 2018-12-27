@@ -22,4 +22,4 @@ Make sure you have your AWS credentials stored as environment variables.
 ## Photos
 
 ![Home](./docs/home.png)
-![Levels](./docs/leves.png)
+![Levels](./docs/levels.png)
