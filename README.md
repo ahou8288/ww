@@ -18,3 +18,8 @@ Just run `npm start` to run the website locally.
 Just run `make` and the makefile will build the scripts and push to prod.
 
 Make sure you have your AWS credentials stored as environment variables.
+
+## Photos
+
+![Home](./docs/home.png)
+![Levels](./docs/leves.png)
